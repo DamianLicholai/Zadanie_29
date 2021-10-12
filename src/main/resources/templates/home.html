@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Super secure app</title>
 </head>
 <body>
 <h1>Hello in super secure app</h1>
-<a href="/secure">Go to secured area</a>
+<a href="/secure">Przejdź do formularza logowania</a>
+
+<h1>Registration form</h1>
+<form action="#" method="post" th:action="@{/rejestracja}" th:object="${user}">
+    <input th:field="*{email}" type="text" placeholder="Email"/><br/>
+    <input th:field="*{password}" type="text" placeholder="Password"/><br/>
+    <input type="submit" value="Register"/>
+</form>
+
 </body>
 </html>
